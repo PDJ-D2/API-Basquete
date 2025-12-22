@@ -1,0 +1,6 @@
+@BasqAPI_HostAddress = http://localhost:5279
+
+GET {{BasqAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
