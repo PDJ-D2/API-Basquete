@@ -2,8 +2,8 @@
 {
     public class DeactivatePlayerCommand
     {
-        public int Id { get; }
-        public DeactivatePlayerCommand(int id)
+        public Guid Id { get; }
+        public DeactivatePlayerCommand(Guid id)
         {
             Id = id;
         }
