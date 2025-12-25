@@ -1,5 +1,6 @@
 ﻿using BasqAPI.Application.Abstractions;
 using BasqAPI.Domain.Entities;
+using BasqAPI.Domain.ValueObjects;
 
 namespace BasqAPI.Application.UseCases.CreatePlayer
 {
@@ -17,7 +18,10 @@ namespace BasqAPI.Application.UseCases.CreatePlayer
             var player = new Player(
                 command.Name,
                 command.Age,
-                command.Position
+                command.Position,
+                Height.FromCentimeters(command.HeightCm),
+                Weight.FromKilograms(command.WeightKg),
+                Wingspan.FromCentimeters(command.WingspanCm)
             );
 
             await _playerRepository.AddAsync(player);

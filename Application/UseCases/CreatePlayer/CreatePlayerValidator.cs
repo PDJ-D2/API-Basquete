@@ -23,6 +23,12 @@ namespace BasqAPI.Application.UseCases.CreatePlayer
                 .NotEmpty().WithMessage("Posição é necessária.")
                 .Must(pos => ValidPositions.Contains(pos))
                 .WithMessage("Posição deve ser uma a seguir: Armador, Ala-armador, Ala, Ala-pivô, Pivô");
+            RuleFor(x => x.HeightCm)
+                .GreaterThan(0).WithMessage("Altura deve ser maior que zero.");
+            RuleFor(x => x.WeightKg)
+                .GreaterThan(0).WithMessage("Peso deve ser maior que zero.");
+            RuleFor(x => x.WingspanCm)
+                .GreaterThan(0).WithMessage("Wingspan deve ser maior que zero.");
         }
     }
 }
