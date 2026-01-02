@@ -7,5 +7,6 @@ namespace BasqAPI.Application.Abstractions
         Task AddAsync(Player player);
         Task UpdateAsync(Player player);
         Task<Player?> GetByIdAsync(Guid id);
+        Task<IReadOnlyList<Player>> GetAllAsync(bool onlyActive);
     }
 }
